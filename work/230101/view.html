@@ -6,33 +6,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- insert headContent -->
+  <link rel="stylesheet" href="/work/AddWorks/reset.css">
   <link rel="stylesheet" href="/work/AddWorks/addworks.css">
   <link rel="stylesheet" href="/work/settings/custom.css">
   <title>サイトタイトル - Work</title>
 </head>
 <body>
-  <header id="header">
+  <header id="header" class="header">
     <nav>
-      <ul>
-        <li><a href="/index.html">HOME</a></li>
-        <li><a href="/work.html">WORK</a></li>
-        <li><a href="/contact.html">CONTACT</a></li>
+      <ul class="header-nav-list">
+        <li><a href="">HOME</a></li>
+        <li><a href="">WORK</a></li>
+        <li><a href="">CONTACT</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    
+    <div class="viewer-page">
+
+      <div id="viewer" class="viewer-area">
+        <ul class="viewer-page-list jp">
+          <li id="1" class="viewer-spread current-page">
+            <div><img id="image" src="jp/1.png"></div>
+            <div><img id="image" src="jp/2.png"></div>
+          </li>
+          <li id="2" class="viewer-spread next-page">
+            <div><img id="image" src="jp/3.png"></div>
+            <div><img id="image" src="jp/4.png"></div>
+          </li>
+          <li id="2" class="viewer-spread future-page">
+            <div><img id="image" src="jp/5.png"></div>
+            <div><img id="image" src="jp/6.png"></div>
+          </li>
+        </ul>
+
+        <button id="prev" class="viewer-prev-btn">
+          <img src="/work/AddWorks/img/chevron-right-solid.svg">
+        </button>
+        <button id="next" class="viewer-next-btn">
+          <img src="/work/AddWorks/img/chevron-left-solid.svg">
+        </button>
+        <button id="full-screen" class="viewer-fullscreen-btn">
+          <img src="/work/AddWorks/img/expand-solid.svg">
+        </button>
+      </div>
+      
+      <div id="viewer-info" class="viewer-info-area">
+        <h2 class="viewer-info-title">サンプルタイトル</h2>
+        <div class="viewer-info-category">
+          <svg>
+            <use xlink:href="/work/AddWorks/img/folder-solid.svg#folder"></use>
+          </svg>
+          サンプルカテゴリ
+        </div>
+        <div class="viewer-info-caption">
+          <div class="viewer-caption-title">
+            <h2>Caption</h2>
+            <aside>作品説明</aside>
+          </div>
+          <p>サンプルキャプション</p>
+          <p>サンプルキャプション</p>
+        </div>
+        <div class="viewer-info-date">
+          <div class="date">Jan 01, 2023</div>
+        </div>
+      </div>
+
+    </div>
   </main>
 
-  <footer id="footer">
+  <footer id="footer" class="footer">
     <nav>
-      <ul>
-        <li><a href="/index.html">HOME</a></li>
-        <li><a href="/work.html">WORK</a></li>
-        <li><a href="/contact.html">CONTACT</a></li>
+      <ul class="footer-nav-list">
+        <li><a href="">HOME</a></li>
+        <li><a href="">WORK</a></li>
+        <li><a href="l">CONTACT</a></li>
       </ul>
     </nav>
+    <div class="copyright">
+      designed by <a href="https://github.com/moliyuzuha">moli</a>
+    </div>
   </footer>
 
   <script src="/work/AddWorks/variables.js" charset="utf-8"></script>
