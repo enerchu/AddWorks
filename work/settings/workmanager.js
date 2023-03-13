@@ -13,7 +13,7 @@ const workInfoList = [
     
     type: manga, // 漫画ならmanga、イラストならillust
     pages: 6, // ページ数
-    rightPageStart: true // 右ページ始まりならtrue、左ページ始まりならfalse
+    rightPageStart: false // 右ページ始まりならtrue、左ページ始まりならfalse
   }, 
   {
     date: 230102,

@@ -5,50 +5,36 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- insert headContent -->
+  <div id="meta-content"></div>
+
   <link rel="stylesheet" href="/work/AddWorks/reset.css">
   <link rel="stylesheet" href="/work/AddWorks/addworks.css">
   <link rel="stylesheet" href="/work/settings/custom.css">
-  <title>サイトタイトル - Work</title>
+  <div id="site-title"><!-- TITLE --></div>
 </head>
 <body>
-  <header id="header" class="header">
-    <nav>
-      <ul class="header-nav-list">
-        <li><a href="">HOME</a></li>
-        <li><a href="">WORK</a></li>
-        <li><a href="">CONTACT</a></li>
-      </ul>
-    </nav>
-  </header>
+  <header id="header" class="header"><!-- header --></header>
 
   <main>
     <div class="viewer-page">
 
       <div id="viewer" class="viewer-area">
-        <ul class="viewer-page-list jp">
-          <li id="1" class="viewer-spread current-page">
-            <div><img id="image" src="jp/1.png"></div>
-            <div><img id="image" src="jp/2.png"></div>
-          </li>
-          <li id="2" class="viewer-spread next-page">
-            <div><img id="image" src="jp/3.png"></div>
-            <div><img id="image" src="jp/4.png"></div>
-          </li>
-          <li id="2" class="viewer-spread future-page">
-            <div><img id="image" src="jp/5.png"></div>
-            <div><img id="image" src="jp/6.png"></div>
-          </li>
-        </ul>
+        <!-- viewer -->
 
         <button id="prev" class="viewer-prev-btn">
-          <img src="/work/AddWorks/img/chevron-right-solid.svg">
+          <svg>
+            <use xlink:href="/work/AddWorks/img/chevron-right-solid.svg#chevrom-right"></use>
+          </svg>
         </button>
         <button id="next" class="viewer-next-btn">
-          <img src="/work/AddWorks/img/chevron-left-solid.svg">
+          <svg>
+            <use xlink:href="/work/AddWorks/img/chevron-left-solid.svg#chevrom-left"></use>
+          </svg>
         </button>
         <button id="full-screen" class="viewer-fullscreen-btn">
-          <img src="/work/AddWorks/img/expand-solid.svg">
+          <svg>
+            <use xlink:href="/work/AddWorks/img/expand-solid.svg#expand"></use>
+          </svg>
         </button>
       </div>
       

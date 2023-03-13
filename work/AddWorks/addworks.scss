@@ -8,6 +8,7 @@ body {
   font-weight: 400;
   font-size: 2rem;
   color: #333;
+  overflow-x: hidden;
 }
 p {
   margin-bottom: .5rem;
@@ -40,6 +41,7 @@ p {
   width: 100%;
   height: calc(100vh - 53px - 6rem);
   background: #f0f0f0;
+  position: relative;
 }
 .viewer-page-list {
   position: relative;
@@ -79,6 +81,57 @@ p {
 .past-page,
 .future-page {
   display: none;
+}
+.viewer-prev-btn,
+.viewer-next-btn {
+  width: calc(50% - 35rem);
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 2rem;
+  transition: .1s;
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 5px #f0f0f0);
+  z-index: 1;
+  svg {
+    width: 4rem;
+    height: 4rem;
+    fill: #818181;
+  }
+  &:hover {
+    opacity: .3;
+  }
+}
+.viewer-prev-btn {
+  right: 0;
+  text-align: right;
+}
+.viewer-next-btn {
+  left: 0;
+  text-align: left;
+}
+.inactive {
+  display: none;
+}
+.viewer-fullscreen-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  font-size: 3rem;
+  padding: .5rem;
+  transition: .1s;
+  filter: drop-shadow(0px 0px 5px #f0f0f0);
+  cursor: pointer;
+  z-index: 2;
+  svg {
+    width: 3rem;
+    height: 3rem;
+    fill: #818181;
+  }
+  &:hover {
+    opacity: .3;
+  }
 }
 .viewer-info-area {
   max-width: 80rem;

@@ -23,7 +23,7 @@ const headerLinks = [
   }
 ];
 const footerLinks = [
-  // デフォルトヘッダーに追加したいコンテンツを入力してください
+  // デフォルトフッターに追加したいコンテンツを入力してください
   {
     name: 'HOME',
     url: '/index.html'
