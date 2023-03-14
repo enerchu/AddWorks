@@ -13,7 +13,8 @@ const workInfoList = [
     
     type: manga, // 漫画ならmanga、イラストならillust
     pages: 6, // ページ数
-    rightPageStart: false // 右ページ始まりならtrue、左ページ始まりならfalse
+    rightPageStart: true, // 右ページ始まりならtrue、左ページ始まりならfalse(イラストの場合は関係なし)
+    extension: 'png' // ファイル拡張子を入力
   }, 
   {
     date: 230102,
@@ -24,6 +25,7 @@ const workInfoList = [
     
     type: illust, 
     pages: 4,
-    rightPageStart: true
+    rightPageStart: true,
+    extension: 'png'
   }
 ]

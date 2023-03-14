@@ -11,30 +11,30 @@ const headerLinks = [
   // デフォルトヘッダーに追加したいコンテンツを入力してください
   {
     name: 'HOME',
-    url: '/index.html'
+    url: ''
   },
   {
     name: 'WORK',
-    url: '/work.html'
+    url: ''
   },
   {
     name: 'CONTACT',
-    url: '/contact.html'
+    url: ''
   }
 ];
 const footerLinks = [
   // デフォルトフッターに追加したいコンテンツを入力してください
   {
     name: 'HOME',
-    url: '/index.html'
+    url: ''
   },
   {
     name: 'WORK',
-    url: '/work.html'
+    url: ''
   },
   {
     name: 'CONTACT',
-    url: '/contact.html'
+    url: ''
   }
 ];
 

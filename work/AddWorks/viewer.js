@@ -53,10 +53,10 @@ function mangaViewer() {
       if (i % 2 == 1) {
         mangaItem = `
           <li id="${Math.ceil(i / 2)}" class="viewer-spread ${pageClass}">
-            <div><img id="image" src="jp/${i}.png"></div>`;
+            <div><img id="image" src="img/${i}.${workInfoList[currentWorkID]['extension']}"></div>`;
       } else {
         mangaItem = `
-            <div><img id="image" src="jp/${i}.png"></div>
+            <div><img id="image" src="img/${i}.${workInfoList[currentWorkID]['extension']}"></div>
           </li>`;
       }
     } else {
@@ -64,10 +64,10 @@ function mangaViewer() {
       if (i % 2 == 0) {
         mangaItem = `
           <li id="${Math.ceil(i / 2) + 1}" class="viewer-spread ${pageClass}">
-            <div><img id="image" src="jp/${i}.png"></div>`
+            <div><img id="image" src="img/${i}.${workInfoList[currentWorkID]['extension']}"></div>`
       } else {
         mangaItem = `
-            <div><img id="image" src="jp/${i}.png"></div>
+            <div><img id="image" src="img/${i}.${workInfoList[currentWorkID]['extension']}"></div>
           </li>`;
       }
     }
@@ -90,7 +90,7 @@ function illustViewer() {
     }
     illustItem = `
         <li id="${i}" class="viewer-spread ${pageClass}">
-          <div><img id="image" src="jp/${i}.png"></div>
+          <div><img id="image" src="img/${i}.${workInfoList[currentWorkID]['extension']}"></div>
         </li>`;
     illustContent = illustContent + illustItem;
   }
@@ -105,6 +105,7 @@ if (workType == 'manga') {
   viewerPosition.insertAdjacentHTML('afterbegin', illustViewer());
 }
 
+// check if there is prev/next page
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 function hasPrevPage() {
@@ -126,6 +127,7 @@ function hasNextPage() {
 hasPrevPage();
 hasNextPage();
 
+// paging
 function prevPage() {
   let currentPage = document.querySelector('.current-page');
   let currentPageID = parseInt(currentPage.getAttribute('id'));
@@ -186,3 +188,72 @@ nextBtn.addEventListener('click', function() {
   hasPrevPage();
   hasNextPage();
 });
+
+// full screen
+function viewFullScreen() {
+  document.getElementById('viewer').classList.toggle('full-screen');
+  document.getElementById('viewer-info').classList.toggle('full-screen');
+  document.querySelector('.header').classList.toggle('full-screen');
+  document.querySelector('.footer').classList.toggle('full-screen');
+
+  const fullScreenBtn = document.getElementById('full-screen');
+  const fullScreenIcon = document.getElementById('full-screen-icon');
+  if (fullScreenIcon.getAttribute('xlink:href') === '/work/AddWorks/img/expand-solid.svg#expand') {
+    fullScreenIcon.setAttribute('xlink:href', '/work/AddWorks/img/compress-solid.svg#compress');
+  } else {
+    fullScreenIcon.setAttribute('xlink:href', '/work/AddWorks/img/expand-solid.svg#expand');
+  }
+}
+document.getElementById('full-screen').onclick = viewFullScreen;
+
+// work info
+
+function viewerInfo() {
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const workDate = [
+    parseInt(String(currentFile).slice(0, 2)),
+    months[parseInt(String(currentFile).slice(2, 4)) - 1],
+    parseInt(String(currentFile).slice(4, 6))
+  ];
+  const viewerInfoContent = `
+    <h2 class="viewer-info-title">${workInfoList[currentWorkID]['title']}</h2>
+    <div class="viewer-info-category">
+      <svg>
+        <use xlink:href="/work/AddWorks/img/folder-solid.svg#folder"></use>
+      </svg>
+      ${workInfoList[currentWorkID]['category']}
+    </div>
+    <div class="viewer-info-caption">
+      <div class="viewer-caption-title">
+        <h2>Caption</h2>
+        <aside>作品説明</aside>
+      </div>
+      ${workInfoList[currentWorkID]['caption']}
+    </div>
+    <div class="viewer-info-date">
+      <div class="date">${workDate[1]} ${workDate[2]}, 20${workDate[0]}</div>
+    </div>`;
+    const viewerInfoPosition = document.getElementById('viewer-info');
+    viewerInfoPosition.insertAdjacentHTML('afterbegin', viewerInfoContent);
+}
+viewerInfo();
+
+// footer
+function defaultFooter() {
+  let footerContent = `
+    <nav>
+      <ul class="footer-nav-list">`;
+  let footerItem;
+  for (let i = 0; i < footerLinks.length; i++) {
+  footerItem = `<li><a href="${footerLinks[i]['url']}">${footerLinks[i]['name']}</a></li>`;
+  footerContent = footerContent + footerItem;
+  }
+  footerContent = `${footerContent}</ul></nav><div class="copyright">designed by <a href="https://github.com/moliyuzuha">moli</a></div>`
+  return footerContent;
+}
+const footerPosition = document.getElementById('footer');
+if (useDefaultFooter == true) {
+  footerPosition.insertAdjacentHTML('afterbegin', defaultFooter());
+} else {
+  footerPosition.insertAdjacentHTML('afterbegin', customFooter);
+}
