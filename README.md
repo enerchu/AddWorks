@@ -56,6 +56,5 @@ work/
 1. 作品情報ファイル(settings/workmanager.js)にタイトル・作品説明、などを記入
 
 # Contact
-不具合・疑問点等ございましたら、moliまでお気軽にお問い合わせください。  
-Twitter … https://twitter.com/moliyuzuha  
-Mail … moliyuzuha@gmail.com  
+不具合・疑問点等ございましたら、えな中までお気軽にお問い合わせください。  
+Mail … stpuchim@outlook.com  
